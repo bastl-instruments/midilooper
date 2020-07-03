@@ -1,0 +1,249 @@
+@import url('fonts/fira-sans.css');
+
+/* General Styles */
+body {
+  font-family: 'Fira Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Two Column Layout */
+#toc, #content {
+  overflow-y: scroll;
+  height: 100%;
+}
+#toc {
+  float: left;
+  width: 400px;
+  padding-left: 20px;
+}
+#content {
+  width: auto;
+  padding-left: 70px;
+  padding-right: 20px;
+}
+
+/* TOC */
+#toc h1, #toc h2, #toc h3, #toc h4 {
+  padding-left: 5px;
+  margin-bottom: 0px;
+}
+#toc h1 {
+  margin-left: 0px;
+  font-weight: 800;
+  margin-top: 15px;
+}
+#toc h2 {
+  margin-left: 15px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+#toc h3 {
+  margin-left: 30px;
+  font-weight: 400;
+  margin-top: 6px;
+}
+#toc h4 {
+  margin-left: 40px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+#toc .active {
+  color: white;
+  background-color: black;
+}
+
+/* Headings */
+#content h1, #content h2, #content h3, #content h4 {
+  margin-top: 0;
+}
+#content h1 {
+  padding-top: 25px;
+  margin-left: -30px;
+}
+#content h2 {
+  padding-top: 20px;
+}
+#content h3 {
+  padding-top: 15px;
+}
+#content h4 {
+  padding-top: 10px;
+}
+#content h1:not(:first-of-type) {
+  margin-top: 60px;
+}
+#content h1:first-of-type {
+  padding-top: 20px;
+  margin-top: 0px;
+}
+
+
+#content p, #content ol, #content td {
+  max-width: 1000px;
+  line-height: 140%;
+}
+
+#content table {
+  max-width: 800px;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+#content thead, #content tr {
+  border-bottom: 2px solid #ccc;
+}
+
+#content thead {
+  text-align:left;
+}
+
+#content td, #content th {
+  padding: 10px;
+  vertical-align: top;
+}
+
+
+#content a {
+  border-bottom: 5px solid #ccc;
+  line-height: 110%;
+  display: inline-block;
+}
+
+#content a:hover {
+  border-color: black;
+}
+
+#content li {
+  margin-top: 10px;
+}
+
+blockquote {
+    border: 5px solid #ccc;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px;
+    max-width: 700px;
+}
+
+blockquote img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+img.image-process-main {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
+
+img.image-process-small {
+  width: 60%;
+  height: auto;
+  max-width: 400px;
+}
+img.image-process-robotmode {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
+img.image-process-robotmodesymbol {
+  width: 80%;
+  height: auto;
+  max-width: 80px;
+}
+
+
+
+img.image-process-robotmode, img.image-process-robotmodesymbol {
+  display: block;
+  margin-bottom: 7px;
+}
+
+img.image-process-inline {
+    vertical-align: bottom;
+}
+
+code {
+  background-color: black;
+  color: white;
+  padding: 1px 3px;
+  border-radius: 2px;
+  font-family: 'Fira Sans';
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+hr {
+    height: 10px;
+    border: none;
+    background-color: #ccc;
+}
+
+#content a[data-footnote]:after {
+  content: attr(data-footnote);
+  vertical-align: super;
+  font-size: 70%;
+  margin-left: 2px;
+  font-weight: 800;
+  display: inline-block;
+  margin-top: -10px;
+}
+
+#content a[data-footnote] {
+  text-decoration: none;
+  position: relative;
+  border-bottom: none;
+}
+
+#content a[data-footnote]:hover:before {
+  content: attr(data-title);
+  display: inline-block;
+  padding: 10px;
+  background: rgba(50, 50, 50, 0.9);
+  color: #FFF;
+  position: absolute;
+  top: -95%;
+  left: 110%;
+  border-radius: 6px;
+  width: 200px;
+  font-size: 80%;
+  line-height: 150%;
+}
+
+
+
+
+
+
+@media (max-width: 1100px) {
+  #toc {
+    display: none;
+  }
+  #content {
+    padding-left: 40px;
+  }
+}
+
+@media print {
+  #toc {
+    display: none;
+  }
+  #content {
+    height: inherit;
+    overflow-y: auto;
+  }
+  h1:not(:first-of-type) {
+    page-break-before: always;
+  }
+  blockquote {
+    page-break-inside: avoid;
+  }
+}
